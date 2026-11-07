@@ -45,24 +45,29 @@ CLEAR_KEYS = [
 ITALIC_PREFIXES = ("keyword", "type", "comment", "link_text")
 
 
-# Notaspy Darker: Terafox's two background colors (bg1, bg0) with HSL
-# lightness scaled by this factor. Hue, saturation and alpha are unchanged.
-DARKEN = 0.65
-TERAFOX_BGS = ("#152528", "#0f1c1e")
+# Notaspy Darker: Terafox's two background colors pushed down to roughly the
+# darkness of the user's Alacritty background (sampled ~#060d12, HSL lightness
+# ~4.7%, saturation ~50%). Hue stays Terafox's teal; saturation is raised to
+# that of the sample so the teal still reads at this low lightness. Alpha is
+# unchanged. Values are (HSL lightness, HSL saturation).
+DARKEN_TO = {
+    "#152528": (0.047, 0.50),  # bg1: editor / main background
+    "#0f1c1e": (0.035, 0.50),  # bg0: status bar, title bar, panels, pop-ups
+}
 
 
-def darken_hex(rgb, factor):
-    r, g, b = (int(rgb[i:i + 2], 16) / 255 for i in (1, 3, 5))
-    h, l, s = colorsys.rgb_to_hls(r, g, b)
-    r, g, b = colorsys.hls_to_rgb(h, l * factor, s)
+def darken_hex(rgb, target):
+    h, _, _ = colorsys.rgb_to_hls(*(int(rgb[i:i + 2], 16) / 255 for i in (1, 3, 5)))
+    l, s = target
+    r, g, b = colorsys.hls_to_rgb(h, l, s)
     return "#" + "".join(f"{round(c * 255):02x}" for c in (r, g, b))
 
 
 def darken_backgrounds(style):
     for key, value in style.items():
-        if ("background" in key and isinstance(value, str)
-                and value[:7].lower() in TERAFOX_BGS):
-            style[key] = darken_hex(value[:7].lower(), DARKEN) + value[7:]
+        base = value[:7].lower() if isinstance(value, str) else None
+        if "background" in key and base in DARKEN_TO:
+            style[key] = darken_hex(base, DARKEN_TO[base]) + value[7:]
 
 
 def italicize(syntax):

@@ -19,7 +19,7 @@ Each family has `[Light]`, default and `[Heavy]` variants:
 Syntax colors are untouched in both families.
 
 - **Notaspy Blur** adds italics to keywords, types and comments (including all their sub-scopes), as Noctis does. Terafox's own italics (attributes, emphasis, link URIs) are kept.
-- **Notaspy Darker** is Notaspy Blur with Terafox's two background colors (`#152528`, `#0f1c1e`) darkened to `#0e181a` and `#0a1214`: HSL lightness × 0.65, hue, saturation and alpha unchanged. Tune with `DARKEN` in `scripts/build.py`.
+- **Notaspy Darker** is Notaspy Blur with Terafox's two background colors pushed down to roughly the darkness of an Alacritty terminal background, keeping Terafox's teal hue: `#152528` → `#061012`, `#0f1c1e` → `#040c0d`. Opacity is unchanged. Tune lightness/saturation in `DARKEN_TO` in `scripts/build.py`.
 - **Notaspy Noctis** keeps Obscuro's colors and italics. The editor, gutter, panels, terminal, tab bar and toolbar backgrounds are made fully transparent so the blur shows through; popovers stay opaque.
 
 ## Install
