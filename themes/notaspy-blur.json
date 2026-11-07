@@ -140,10 +140,12 @@
             "color": "#ff9664"
           },
           "comment": {
-            "color": "#6d7f8b"
+            "color": "#6d7f8b",
+            "font_style": "italic"
           },
           "comment.doc": {
-            "color": "#6d7f8b"
+            "color": "#6d7f8b",
+            "font_style": "italic"
           },
           "constant": {
             "color": "#ff9664"
@@ -184,25 +186,31 @@
             "color": "#e85c51"
           },
           "keyword": {
-            "color": "#ad5c7c"
+            "color": "#ad5c7c",
+            "font_style": "italic"
           },
           "keyword.directive": {
-            "color": "#73a3b7"
+            "color": "#73a3b7",
+            "font_style": "italic"
           },
           "keyword.import": {
-            "color": "#d38d97"
+            "color": "#d38d97",
+            "font_style": "italic"
           },
           "keyword.operator": {
-            "color": "#cbd9d8"
+            "color": "#cbd9d8",
+            "font_style": "italic"
           },
           "keyword.operator.regex": {
-            "color": "#73a3b7"
+            "color": "#73a3b7",
+            "font_style": "italic"
           },
           "label.regex": {
             "color": "#fdb292"
           },
           "link_text": {
-            "color": "#73a3b7"
+            "color": "#73a3b7",
+            "font_style": "italic"
           },
           "link_uri": {
             "color": "#ff9664",
@@ -282,13 +290,16 @@
             "font_weight": 700
           },
           "type": {
-            "color": "#fda47f"
+            "color": "#fda47f",
+            "font_style": "italic"
           },
           "type.class.call": {
-            "color": "#a1cdd8"
+            "color": "#a1cdd8",
+            "font_style": "italic"
           },
           "type.class.inheritance": {
-            "color": "#a1cdd8"
+            "color": "#a1cdd8",
+            "font_style": "italic"
           },
           "variable": {
             "color": "#ebebeb"
@@ -505,10 +516,12 @@
             "color": "#ff9664"
           },
           "comment": {
-            "color": "#6d7f8b"
+            "color": "#6d7f8b",
+            "font_style": "italic"
           },
           "comment.doc": {
-            "color": "#6d7f8b"
+            "color": "#6d7f8b",
+            "font_style": "italic"
           },
           "constant": {
             "color": "#ff9664"
@@ -549,25 +562,31 @@
             "color": "#e85c51"
           },
           "keyword": {
-            "color": "#ad5c7c"
+            "color": "#ad5c7c",
+            "font_style": "italic"
           },
           "keyword.directive": {
-            "color": "#73a3b7"
+            "color": "#73a3b7",
+            "font_style": "italic"
           },
           "keyword.import": {
-            "color": "#d38d97"
+            "color": "#d38d97",
+            "font_style": "italic"
           },
           "keyword.operator": {
-            "color": "#cbd9d8"
+            "color": "#cbd9d8",
+            "font_style": "italic"
           },
           "keyword.operator.regex": {
-            "color": "#73a3b7"
+            "color": "#73a3b7",
+            "font_style": "italic"
           },
           "label.regex": {
             "color": "#fdb292"
           },
           "link_text": {
-            "color": "#73a3b7"
+            "color": "#73a3b7",
+            "font_style": "italic"
           },
           "link_uri": {
             "color": "#ff9664",
@@ -647,13 +666,16 @@
             "font_weight": 700
           },
           "type": {
-            "color": "#fda47f"
+            "color": "#fda47f",
+            "font_style": "italic"
           },
           "type.class.call": {
-            "color": "#a1cdd8"
+            "color": "#a1cdd8",
+            "font_style": "italic"
           },
           "type.class.inheritance": {
-            "color": "#a1cdd8"
+            "color": "#a1cdd8",
+            "font_style": "italic"
           },
           "variable": {
             "color": "#ebebeb"
@@ -870,10 +892,12 @@
             "color": "#ff9664"
           },
           "comment": {
-            "color": "#6d7f8b"
+            "color": "#6d7f8b",
+            "font_style": "italic"
           },
           "comment.doc": {
-            "color": "#6d7f8b"
+            "color": "#6d7f8b",
+            "font_style": "italic"
           },
           "constant": {
             "color": "#ff9664"
@@ -914,25 +938,31 @@
             "color": "#e85c51"
           },
           "keyword": {
-            "color": "#ad5c7c"
+            "color": "#ad5c7c",
+            "font_style": "italic"
           },
           "keyword.directive": {
-            "color": "#73a3b7"
+            "color": "#73a3b7",
+            "font_style": "italic"
           },
           "keyword.import": {
-            "color": "#d38d97"
+            "color": "#d38d97",
+            "font_style": "italic"
           },
           "keyword.operator": {
-            "color": "#cbd9d8"
+            "color": "#cbd9d8",
+            "font_style": "italic"
           },
           "keyword.operator.regex": {
-            "color": "#73a3b7"
+            "color": "#73a3b7",
+            "font_style": "italic"
           },
           "label.regex": {
             "color": "#fdb292"
           },
           "link_text": {
-            "color": "#73a3b7"
+            "color": "#73a3b7",
+            "font_style": "italic"
           },
           "link_uri": {
             "color": "#ff9664",
@@ -1012,13 +1042,16 @@
             "font_weight": 700
           },
           "type": {
-            "color": "#fda47f"
+            "color": "#fda47f",
+            "font_style": "italic"
           },
           "type.class.call": {
-            "color": "#a1cdd8"
+            "color": "#a1cdd8",
+            "font_style": "italic"
           },
           "type.class.inheritance": {
-            "color": "#a1cdd8"
+            "color": "#a1cdd8",
+            "font_style": "italic"
           },
           "variable": {
             "color": "#ebebeb"
