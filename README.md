@@ -1,10 +1,11 @@
 # Notaspy Blur for Zed
 
-Two theme families, each in three blur intensities modeled on the Espresso variants of [jenslys/zed-catppuccin-blur](https://github.com/jenslys/zed-catppuccin-blur).
+Three theme families, each in three blur intensities modeled on the Espresso variants of [jenslys/zed-catppuccin-blur](https://github.com/jenslys/zed-catppuccin-blur).
 
 | Family | Based on |
 |---|---|
 | `Notaspy Blur` | `Terafox - blurred` from [cange/nightfox.zed](https://github.com/cange/nightfox.zed), with Noctis-style italics |
+| `Notaspy Darker` | `Notaspy Blur` with darker background colors (same hue, same opacity) |
 | `Notaspy Noctis` | `Noctis Obscuro` from [sidwachche/noctis-port](https://github.com/sidwachche/noctis-port), made translucent |
 
 Each family has `[Light]`, default and `[Heavy]` variants:
@@ -18,6 +19,7 @@ Each family has `[Light]`, default and `[Heavy]` variants:
 Syntax colors are untouched in both families.
 
 - **Notaspy Blur** adds italics to keywords, types and comments (including all their sub-scopes), as Noctis does. Terafox's own italics (attributes, emphasis, link URIs) are kept.
+- **Notaspy Darker** is Notaspy Blur with Terafox's two background colors (`#152528`, `#0f1c1e`) darkened to `#0e181a` and `#0a1214`: HSL lightness × 0.65, hue, saturation and alpha unchanged. Tune with `DARKEN` in `scripts/build.py`.
 - **Notaspy Noctis** keeps Obscuro's colors and italics. The editor, gutter, panels, terminal, tab bar and toolbar backgrounds are made fully transparent so the blur shows through; popovers stay opaque.
 
 ## Install

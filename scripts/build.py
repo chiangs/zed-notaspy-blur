@@ -2,12 +2,13 @@
 """Generate the Notaspy theme families.
 
 Notaspy Blur   <- Nightfox "Terafox - blurred", plus Noctis-style italics.
+Notaspy Darker <- Notaspy Blur with darker background colors (same hue).
 Notaspy Noctis <- Noctis "Noctis Obscuro", made translucent.
 
 Between blur levels only background-layer alpha channels change. Levels mirror
 the Espresso variants of jenslys/zed-catppuccin-blur.
 """
-import copy, json, pathlib
+import colorsys, copy, json, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / "scripts"
@@ -42,6 +43,26 @@ CLEAR_KEYS = [
 # Noctis italicizes these scopes (and, via Zed's prefix fallback, every
 # sub-scope under them, e.g. keyword.import, type.builtin).
 ITALIC_PREFIXES = ("keyword", "type", "comment", "link_text")
+
+
+# Notaspy Darker: Terafox's two background colors (bg1, bg0) with HSL
+# lightness scaled by this factor. Hue, saturation and alpha are unchanged.
+DARKEN = 0.65
+TERAFOX_BGS = ("#152528", "#0f1c1e")
+
+
+def darken_hex(rgb, factor):
+    r, g, b = (int(rgb[i:i + 2], 16) / 255 for i in (1, 3, 5))
+    h, l, s = colorsys.rgb_to_hls(r, g, b)
+    r, g, b = colorsys.hls_to_rgb(h, l * factor, s)
+    return "#" + "".join(f"{round(c * 255):02x}" for c in (r, g, b))
+
+
+def darken_backgrounds(style):
+    for key, value in style.items():
+        if ("background" in key and isinstance(value, str)
+                and value[:7].lower() in TERAFOX_BGS):
+            style[key] = darken_hex(value[:7].lower(), DARKEN) + value[7:]
 
 
 def italicize(syntax):
@@ -84,6 +105,13 @@ def main():
     write(THEMES / "notaspy-blur.json", nf["$schema"], "Notaspy Blur",
           blur_variants(terafox, "Notaspy Blur",
                         extra=lambda s: italicize(s["syntax"])))
+
+    def darker(style):
+        italicize(style["syntax"])
+        darken_backgrounds(style)
+
+    write(THEMES / "notaspy-darker.json", nf["$schema"], "Notaspy Darker",
+          blur_variants(terafox, "Notaspy Darker", extra=darker))
 
     nx = json.loads((SCRIPTS / "noctis-obscuro-source.json").read_text())
     obscuro = next(t for t in nx["themes"] if t["name"] == "Noctis Obscuro")
